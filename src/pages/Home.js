@@ -5,8 +5,17 @@ import backgroundImg from "../assets/img/home_background.webp";
 import backgroundImg550 from "../assets/img/home_background_550.webp";
 import backgroundImg1090 from "../assets/img/home_background_1090.webp";
 import backgroundImg1200 from "../assets/img/home_background_1200.webp";
+import { useContext, useEffect } from "react";
+import { PagesContext } from "../context/pagesContext";
 
 export const Home = () => {
+  const { currentPage } = useContext(PagesContext);
+  sessionStorage.clear();
+
+  useEffect(() => {
+    if (currentPage.id) window.location.reload(true);
+  }, []);
+
   return (
     <HomeContentWrapper>
       <BackgroundWrap>
