@@ -1,8 +1,11 @@
 {
   "files": {
-    "main.js": "/RMK-Mykolayiv/static/js/main.a0f74156.js",
+    "main.js": "/RMK-Mykolayiv/static/js/main.b328e21b.js",
     "static/js/787.1274b464.chunk.js": "/RMK-Mykolayiv/static/js/787.1274b464.chunk.js",
+    "static/media/home_background_550.webp": "/RMK-Mykolayiv/static/media/home_background_550.42ef25466fec7e4af39e.webp",
     "static/media/home_background.webp": "/RMK-Mykolayiv/static/media/home_background.9323ca925954f951bb39.webp",
+    "static/media/home_background_1200.webp": "/RMK-Mykolayiv/static/media/home_background_1200.c4d03eeccc676168f089.webp",
+    "static/media/home_background_1090.webp": "/RMK-Mykolayiv/static/media/home_background_1090.76776c88d248c35885bd.webp",
     "static/media/project.webp": "/RMK-Mykolayiv/static/media/project.3f50462dffc3d6f6dc17.webp",
     "static/media/distribution.webp": "/RMK-Mykolayiv/static/media/distribution.e87b4bc64de9223d5446.webp",
     "static/media/assembly.webp": "/RMK-Mykolayiv/static/media/assembly.44f75f69c0caa2ab3bd3.webp",
@@ -13,10 +16,10 @@
     "static/media/arrow_back.svg": "/RMK-Mykolayiv/static/media/arrow_back.5c130fcb31f26e042f45e9f231da458a.svg",
     "static/media/email.svg": "/RMK-Mykolayiv/static/media/email.bc557e5aef7932daf51ae0a634ec88d4.svg",
     "static/media/list_marker.svg": "/RMK-Mykolayiv/static/media/list_marker.f72d9e67e3d7a1ab13dc6906afbf8d43.svg",
-    "main.a0f74156.js.map": "/RMK-Mykolayiv/static/js/main.a0f74156.js.map",
+    "main.b328e21b.js.map": "/RMK-Mykolayiv/static/js/main.b328e21b.js.map",
     "787.1274b464.chunk.js.map": "/RMK-Mykolayiv/static/js/787.1274b464.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a0f74156.js"
+    "static/js/main.b328e21b.js"
   ]
 }
