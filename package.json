@@ -15,6 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -26,6 +28,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://valerii-hyrchenko.github.io/RMK-Mykolayiv/",
   "browserslist": {
     "production": [
       ">0.2%",
