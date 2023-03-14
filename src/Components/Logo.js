@@ -50,15 +50,15 @@ const LogoWrapper = styled.div`
   }
 
   @media (max-width: 1090px) {
-    width: 250px;
+    width: 260px;
   }
 
-  @media (max-width: 980px) {
-    width: 220px;
+  @media (max-width: 800px) {
+    width: 240px;
   }
 
-  @media (max-width: 880px) {
-    width: 200px;
+  @media (max-width: 550px) {
+    width: 210px;
   }
 `;
 
