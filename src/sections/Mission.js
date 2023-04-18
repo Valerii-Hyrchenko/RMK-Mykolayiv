@@ -1,0 +1,98 @@
+import styled from "styled-components";
+import { aboutCompanyUkr } from "../contentSettings/configs";
+import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
+import { DetailsWrap } from "../Components/cards/componentsForCards/reusedStyledComponents";
+import photoImg from "../assets/img/photo.webp";
+
+export const Mission = () => {
+  const { fullDescription1, fullDescription2, name, position } =
+    aboutCompanyUkr[0];
+  let preText = fullDescription1.slice(0, 9);
+  let text = fullDescription1.slice(9);
+
+  return (
+    <MissionBackground>
+      <SectionWrapper>
+        <MissionFlexWrapper>
+          <PhotoWrapper>
+            <ImgWrapper>
+              <Img src={photoImg} alt="photo_img" />
+            </ImgWrapper>
+            <BorderBlockBg />
+          </PhotoWrapper>
+          <DetailsWrap isMissionSect={true}>
+            <MissionText>
+              <MissionPretext>" {preText}</MissionPretext>
+              {text}
+            </MissionText>
+            <MissionText>{fullDescription2} "</MissionText>
+            <MissionText>
+              <NameDirector>{name}</NameDirector>
+              {position}
+            </MissionText>
+          </DetailsWrap>
+        </MissionFlexWrapper>
+      </SectionWrapper>
+    </MissionBackground>
+  );
+};
+
+const MissionBackground = styled.div`
+  background-color: rgb(82, 155, 45, 0.9);
+  padding: 80px 0;
+  margin: 80px 0 40px;
+`;
+
+const MissionFlexWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const PhotoWrapper = styled.div`
+  margin-top: 50px;
+  position: relative;
+`;
+
+const BorderBlockBg = styled.div`
+  height: 120px;
+  width: 150px;
+  border: 4px solid rgb(255, 255, 255);
+  position: absolute;
+  bottom: 20px;
+  left: -30px;
+  border-radius: 25px;
+`;
+
+const ImgWrapper = styled.div`
+  width: 290px;
+  border-radius: 35px;
+  line-height: 0;
+  position: relative;
+  z-index: 5;
+`;
+
+const Img = styled.img`
+  width: 100%;
+  border-radius: 35px;
+  border: 4px solid rgb(0, 118, 53);
+`;
+
+const MissionPretext = styled.span`
+  font-size: 1.4em;
+  color: rgb(0, 118, 53);
+  font-weight: 700;
+`;
+
+const MissionText = styled.p`
+  font-size: 1.2em;
+  line-height: 1.3em;
+  text-align: justify;
+  margin-bottom: 10px;
+`;
+
+const NameDirector = styled.span`
+  font-size: 1.1em;
+  line-height: 1.2em;
+  font-weight: 700;
+  margin-right: 10px;
+`;

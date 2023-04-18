@@ -1,45 +1,79 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import { missionUkr } from "../contentSettings/configs";
-import { headerUkr } from "../contentSettings/configs";
-import { PagesContext } from "../context/pagesContext";
+import { SectionWrapper } from "./cards/componentsForCards/reusedStyledComponents";
 
-export const Footer = () => {
-  const { currentPage } = useContext(PagesContext);
+export const Footer = ({ isNews }) => {
   return (
-    <FooterContentWrapper currentPage={currentPage}>
-      <FooterText>{missionUkr.text}</FooterText>
+    <FooterContentWrapper isNews={isNews}>
+      <SectionWrapper>
+        {isNews ? <FooterTopBorder /> : null}
+        <FooterTextFlexWrap>
+          {isNews ? (
+            <FooterCompany>{missionUkr.footerName}</FooterCompany>
+          ) : null}
+
+          <FooterText>{missionUkr.text}</FooterText>
+        </FooterTextFlexWrap>
+      </SectionWrapper>
     </FooterContentWrapper>
   );
 };
 
-const FooterContentWrapper = styled.footer`
-  width: 100%;
+const FooterContentWrapper = styled.div`
+  border-top: 1px solid rgb(0, 118, 53);
   text-align: center;
-  padding-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 
-  ${({ currentPage }) =>
-    currentPage.text !== headerUkr[3].text
+  ${({ isNews }) =>
+    isNews
       ? `
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  `
+          text-align: right;
+          background-color: rgb(0, 0, 0, 0.75);
+          border-bottom: 3px solid rgb(255, 255, 255);
+          
+      `
       : null}
 
-  @media (max-width: 800px) {
-    position: relative;
-    margin-top: 30px;
+  ${({ isNews }) =>
+    isNews &&
+    `
+  ${FooterTextFlexWrap} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  ${FooterText} {
+    margin-right: -80px;
+    color: rgb(255, 255, 255);
+    padding: 10px 0 15px;
+  }
+  `}
+`;
+
+const FooterTextFlexWrap = styled.div``;
+
+const FooterTopBorder = styled.div`
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 5px;
+`;
+
+const FooterCompany = styled.p`
+  font-size: 1.1em;
+  color: rgb(255, 255, 255);
+  margin-left: -80px;
 `;
 
 const FooterText = styled.p`
-  padding: 15px 0;
-  border-radius: 10px;
-  font-size: 1.2em;
-  font-weight: 700;
-  color: rgb(255, 255, 255);
-  background-color: rgb(82, 155, 45, 0.3);
+  padding: 15px;
+  color: rgb(0, 0, 0, 0.5);
+  font-size: 1.1em;
 
   @media (max-width: 1200px) {
     padding: 10px 0;

@@ -4,29 +4,32 @@ import distributionImg from "../assets/img/distribution.webp";
 import phoneImg from "../assets/icons/phone.svg";
 import emailImg from "../assets/icons/email.svg";
 import locationImg from "../assets/icons/location.svg";
+import missionImg from "../assets/img/mission.webp";
+import targetImg from "../assets/img/target.webp";
+import arrowNextProjectStage from "../assets/icons/arrow_next_project_stage.svg";
+import firstProjectStage from "../assets/img/first_project_stage.webp";
+import supplyProjectStage from "../assets/img/supply_project_stage.webp";
+import assemblingProjectStage from "../assets/img/assembling_project_stage.webp";
+import finalProjectStage from "../assets/img/final_project_stage.webp";
 
 let id = Date.now();
 
 export const headerUkr = [
   {
     id: id++,
-    text: "ПРО КОМПАНІЮ",
-    routWay: "/about_company",
+    text: "НАПРЯМИ ДІЯЛЬНОСТІ",
   },
   {
     id: id++,
-    text: "НАПРЯМИ ДІЯЛЬНОСТІ",
-    routWay: "/business_line",
+    text: "ПРО КОМПАНІЮ",
   },
   {
     id: id++,
     text: "КОНТАКТИ",
-    routWay: "/contacts",
   },
   {
     id: id++,
     text: "НОВИНИ",
-    routWay: "/news",
   },
 ];
 
@@ -53,17 +56,54 @@ export const aboutCompanyUkr = [
     id: id++,
     preText: "Місія...",
     text: "впровадження ефективних, безпечних та якісних інженерних рішень для підприємств.",
+    fullDescription1:
+      "Ми завжди дотримуємось високих стандартів якості та безпеки, що дозволяє нам надавати найкращий сервіс для Клієнтів  та забезпечити ефективну роботу нашої команди. Спеціалісти компанії мають відповідний досвід, високий рівень кваліфікації, надійні та сучасні інструменти для проведення робіт.",
+    fullDescription2:
+      "Ми постійно стежимо за новими тенденціями та технологіями у своїй галузі, щоб запропонувати нашим Клієнтам найсучасніші та ефективні рішення, які забезпечать повну задоволеність їх потреб та очікувань.",
+    name: "Олександр ДЕРМІЛЬОВ,",
+    position: "директор",
+    img: missionImg,
   },
   {
     id: id++,
     preText: "Ціль...",
-    text: "бути ефективним та лідируючим провайдером з інжинірингу та монтажних робіт. ",
-  },
-  {
-    id: id++,
-    text: "Ми завжди дотримуємося високих стандартів якості та безпеки, що дозволяє нам надавати найкращий сервіс для Клієнтів  та забезпечити ефективну роботу нашої команди. Спеціалісти компанії мають відповідний досвід, високий рівень кваліфікації, надійні та сучасні інструменти для проведення робіт. Ми завжди стежимо за новими тенденціями та технологіями у своїй галузі, щоб забезпечити Клієнтів найсучаснішими та ефективнішими рішеннями. Готові відповісти на всі запитання та запити наших Клієнтів, щоб забезпечити повну задоволеність їх потреб та очікувань.",
+    text: "бути ефективним та лідируючим провайдером з монтажних робіт та інжинірингу.",
+    img: targetImg,
   },
 ];
+
+export const projectStages = {
+  title: "етапи реалізації проекту",
+  arrowImg: arrowNextProjectStage,
+  description: [
+    {
+      id: id++,
+      itemTitle: "проектування",
+      img: firstProjectStage,
+      itemText: "… починається з оформлення ТЗ",
+    },
+    {
+      id: id++,
+      itemTitle: "поставка матеріалів",
+      img: supplyProjectStage,
+      itemText: "закупка та поставка запроектованих матеріалів та обладнання",
+    },
+    {
+      id: id++,
+      itemTitle: "монтажні роботи",
+      img: assemblingProjectStage,
+      itemText:
+        "погодження організаційних питань та графіку  з Замовником,  виконання робіт",
+    },
+    {
+      id: id++,
+      itemTitle: "оформлення виконавчої документації",
+      img: finalProjectStage,
+      itemText:
+        "завершення робіт, оформлення та передача Замовнику відповідної документації, журналів та Актів",
+    },
+  ],
+};
 
 export const contactsUkr = [
   {
@@ -132,6 +172,26 @@ export const newsUkr = [
 export const missionUkr = {
   id: id++,
   text: "ефективні, безпечні та якісні рішення",
+  footerName: "© 2022 РМК-МИКОЛАЇВ",
+};
+
+export const sectionsTitles = {
+  businessLine: {
+    id: id++,
+    text: "Напрями діяльності",
+  },
+  aboutCompany: {
+    id: id++,
+    text: "Про компанію",
+  },
+  contacts: {
+    id: id++,
+    text: "Контакти",
+  },
+  news: {
+    id: id++,
+    text: "Головні новини",
+  },
 };
 
 export const assemblyDetailsUkr = {
