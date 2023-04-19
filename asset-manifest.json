@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/RMK-Mykolayiv/static/js/main.785e5ad1.js",
+    "main.js": "/RMK-Mykolayiv/static/js/main.c19e4fbf.js",
     "static/media/home_background.jpg": "/RMK-Mykolayiv/static/media/home_background.7d85ae1e92741698a66f.jpg",
     "static/media/distribution_img.webp": "/RMK-Mykolayiv/static/media/distribution_img.e708175b118b21833fc0.webp",
     "static/media/photo.webp": "/RMK-Mykolayiv/static/media/photo.cac92f4aefdb889a79cb.webp",
@@ -24,9 +24,9 @@
     "static/media/scroll_to_top_arrow.svg": "/RMK-Mykolayiv/static/media/scroll_to_top_arrow.92519fdfa44201a2a558a97c94c5efed.svg",
     "static/media/email.svg": "/RMK-Mykolayiv/static/media/email.bc557e5aef7932daf51ae0a634ec88d4.svg",
     "static/media/list_marker.svg": "/RMK-Mykolayiv/static/media/list_marker.f72d9e67e3d7a1ab13dc6906afbf8d43.svg",
-    "main.785e5ad1.js.map": "/RMK-Mykolayiv/static/js/main.785e5ad1.js.map"
+    "main.c19e4fbf.js.map": "/RMK-Mykolayiv/static/js/main.c19e4fbf.js.map"
   },
   "entrypoints": [
-    "static/js/main.785e5ad1.js"
+    "static/js/main.c19e4fbf.js"
   ]
 }
