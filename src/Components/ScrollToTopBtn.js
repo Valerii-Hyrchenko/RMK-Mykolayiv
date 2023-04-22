@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { SectionWrapper } from "./cards/componentsForCards/reusedStyledComponents";
 import arrow from "../assets/icons/scroll_to_top_arrow.svg";
+import { memo } from "react";
 
-export const ScrollToTopBtn = () => {
+const ScrollToTopBtn = () => {
   return (
     <SectionWrapper>
       <ComponentWrap>
@@ -16,10 +17,21 @@ export const ScrollToTopBtn = () => {
   );
 };
 
+export default memo(ScrollToTopBtn);
+
 const ComponentWrap = styled.div`
   position: absolute;
+  z-index: 5;
   bottom: 0;
   right: 10%;
+
+  @media (max-width: 800px) {
+    right: 15%;
+  }
+
+  @media (max-width: 480px) {
+    right: 20%;
+  }
 `;
 
 const ScrollToTopBtnWrapper = styled.div`

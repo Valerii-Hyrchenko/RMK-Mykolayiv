@@ -1,8 +1,9 @@
-import { AssemblyCard } from "../Components/cards/AssemblyCard";
-import { AssemblyInfo } from "../Components/businessLineDetails/AssemblyInfo";
+import AssemblyCard from "../Components/cards/AssemblyCard";
+import AssemblyInfo from "../Components/businessLineDetails/AssemblyInfo";
 import styled from "styled-components";
+import { memo } from "react";
 
-export const AssemblyDetails = () => {
+const AssemblyDetails = () => {
   return (
     <AssemblyDetailsFlexWrap>
       <AssemblyCard />
@@ -11,12 +12,15 @@ export const AssemblyDetails = () => {
   );
 };
 
+export default memo(AssemblyDetails);
+
 const AssemblyDetailsFlexWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   animation-name: showPage;
   animation-duration: 800ms;
+  row-gap: 75px;
   transition-timing-function: ease-in-out;
 
   @keyframes showPage {
@@ -44,7 +48,6 @@ const AssemblyDetailsFlexWrap = styled.div`
   }
 
   @media (max-width: 800px) {
-    margin: 0 auto;
     flex-direction: column;
   }
 `;

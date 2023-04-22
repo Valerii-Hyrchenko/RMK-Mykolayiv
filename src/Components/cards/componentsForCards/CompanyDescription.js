@@ -1,9 +1,10 @@
+import { memo } from "react";
 import styled from "styled-components";
 import { aboutCompanyUkr } from "../../../contentSettings/configs";
 
-export const CompanyDescription = () => {
+const CompanyDescription = () => {
   return (
-    <DescriptionContainer>
+    <DescriptionFlexContainer>
       {aboutCompanyUkr.map(({ id, preText, text, img }) => (
         <ContentWrapper key={id}>
           <GreenText>{preText}</GreenText>
@@ -13,11 +14,13 @@ export const CompanyDescription = () => {
           </ImgWrapper>
         </ContentWrapper>
       ))}
-    </DescriptionContainer>
+    </DescriptionFlexContainer>
   );
 };
 
-const DescriptionContainer = styled.div`
+export default memo(CompanyDescription);
+
+const DescriptionFlexContainer = styled.div`
   max-width: 980px;
   margin: 30px auto 60px;
   background-color: rgb(255, 255, 255);
@@ -27,6 +30,13 @@ const DescriptionContainer = styled.div`
 
   @media (max-width: 1090px) {
     padding: 20px;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    margin: 30px auto;
   }
 `;
 

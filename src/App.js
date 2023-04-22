@@ -1,15 +1,15 @@
-import { Header } from "./sections/Header";
-import { Logo } from "./Components/forHeader/Logo";
-import { Home } from "./sections/Home";
-import { BusinessLine } from "./sections/BusinessLine";
-import { AboutCompany } from "./sections/AboutCompany";
-import { Mission } from "./sections/Mission";
-import { ProjectStages } from "./sections/ProjectStages";
-import { Contacts } from "./sections/Contacts";
-import { News } from "./sections/News";
-import { ScrollToTopBtn } from "./Components/ScrollToTopBtn";
+import Header from "./sections/Header";
+import Logo from "./Components/forHeader/Logo";
+import Home from "./sections/Home";
+import BusinessLine from "./sections/BusinessLine";
+import AboutCompany from "./sections/AboutCompany";
+import Mission from "./sections/Mission";
+import ProjectStages from "./sections/ProjectStages";
+import Contacts from "./sections/Contacts";
+import News from "./sections/News";
+import ScrollToTopBtn from "./Components/ScrollToTopBtn";
 import { PagesContext } from "./context/pagesContext";
-import { GeneralPageContainer } from "./Components/GeneralPageContainer";
+import GeneralPageContainer from "./Components/GeneralPageContainer";
 import { useEffect, useContext, useState } from "react";
 
 const App = () => {
@@ -25,11 +25,13 @@ const App = () => {
   const hideHomeSectionAnim = () => {
     let scrollLevel = window.scrollY;
     let homeSectHeight = homeRef.current.clientHeight;
-    if (!isHideHome && scrollLevel < homeSectHeight) {
+    if (!isHideHome && scrollLevel > 0 && scrollLevel < homeSectHeight) {
       setIsHideHome(true);
       if (!isClickOnNavMenu) setTimeout(() => window.scrollTo(0, 0), 800);
     }
-    setIsScrollToTopBtn(scrollLevel > window.screen.height * 0.5);
+    setIsScrollToTopBtn(
+      scrollLevel > window.screen.height * 0.5 && homeSectHeight === 0
+    );
   };
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const App = () => {
   useEffect(() => {
     window.addEventListener("scroll", hideHomeSectionAnim);
     return () => window.removeEventListener("scroll", hideHomeSectionAnim);
-  }, [isClickOnNavMenu]);
+  }, [isClickOnNavMenu, isHideHome]);
 
   return (
     <>

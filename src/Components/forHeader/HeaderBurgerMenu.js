@@ -1,6 +1,9 @@
+import { useContext, memo } from "react";
 import styled from "styled-components";
+import { PagesContext } from "../../context/pagesContext";
 
-export const HeaderBurgerMenu = ({ isCheckboxChecked, handleMenuChanger }) => {
+const HeaderBurgerMenu = ({ handleMenuChanger }) => {
+  const { isCheckboxChecked } = useContext(PagesContext);
   return (
     <CheckboxWrapper>
       <LabelCheckbox>
@@ -17,12 +20,15 @@ export const HeaderBurgerMenu = ({ isCheckboxChecked, handleMenuChanger }) => {
   );
 };
 
+export default memo(HeaderBurgerMenu);
+
 const CheckboxWrapper = styled.div`
-  position: fixed;
-  top: 26px;
-  right: 40px;
+  position: absolute;
+  right: 0;
   cursor: pointer;
-  z-index: 15;
+  z-index: 20;
+  margin: 18px 5px 0 0;
+  max-width: 40px;
   display: none;
 
   @media (max-width: 1090px) {

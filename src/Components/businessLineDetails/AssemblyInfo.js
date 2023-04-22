@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { assemblyDetailsUkr } from "../../contentSettings/configs";
 import {
   DetailsWrap,
@@ -5,9 +6,9 @@ import {
   BusinessLineDetailsList,
   BusinessLineDetailsItem,
 } from "../cards/componentsForCards/reusedStyledComponents";
-import { BackToBusinessLineBtn } from "./BackToBusinessLineBtn";
+import BackToBusinessLineBtn from "./BackToBusinessLineBtn";
 
-export const AssemblyInfo = () => {
+const AssemblyInfo = () => {
   return (
     <DetailsWrap>
       <BackToBusinessLineBtn />
@@ -22,3 +23,5 @@ export const AssemblyInfo = () => {
     </DetailsWrap>
   );
 };
+
+export default memo(AssemblyInfo);

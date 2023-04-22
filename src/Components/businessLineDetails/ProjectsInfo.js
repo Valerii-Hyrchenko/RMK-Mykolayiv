@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { projectsDetailsUkr } from "../../contentSettings/configs";
 import {
   DetailsWrap,
@@ -5,9 +6,9 @@ import {
   BusinessLineDetailsList,
   BusinessLineDetailsItem,
 } from "../cards/componentsForCards/reusedStyledComponents";
-import { BackToBusinessLineBtn } from "./BackToBusinessLineBtn";
+import BackToBusinessLineBtn from "./BackToBusinessLineBtn";
 
-export const ProjectsInfo = () => {
+const ProjectsInfo = () => {
   return (
     <DetailsWrap isBusinessLineProjects={true}>
       <BackToBusinessLineBtn />
@@ -24,3 +25,5 @@ export const ProjectsInfo = () => {
     </DetailsWrap>
   );
 };
+
+export default memo(ProjectsInfo);

@@ -1,8 +1,9 @@
-import { ProjectsCard } from "../Components/cards/ProjectsCard";
-import { ProjectsInfo } from "../Components/businessLineDetails/ProjectsInfo";
+import ProjectsCard from "../Components/cards/ProjectsCard";
+import ProjectsInfo from "../Components/businessLineDetails/ProjectsInfo";
 import styled from "styled-components";
+import { memo } from "react";
 
-export const ProjectsDetails = () => {
+const ProjectsDetails = () => {
   return (
     <ProjectsDetailsFlexWrap>
       <ProjectsCard />
@@ -10,6 +11,8 @@ export const ProjectsDetails = () => {
     </ProjectsDetailsFlexWrap>
   );
 };
+
+export default memo(ProjectsDetails);
 
 const ProjectsDetailsFlexWrap = styled.div`
   display: flex;
@@ -39,11 +42,11 @@ const ProjectsDetailsFlexWrap = styled.div`
   }
 
   @media (max-width: 1090px) {
+    margin-top: 20px;
     align-items: flex-end;
   }
 
   @media (max-width: 800px) {
-    margin-top: 0;
     flex-direction: column;
     align-items: center;
   }

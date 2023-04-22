@@ -1,10 +1,11 @@
-import { Navigation } from "../Components/forHeader/Navigation";
+import { memo } from "react";
+import Navigation from "../Components/forHeader/Navigation";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
 import styled from "styled-components";
 import { useContext } from "react";
 import { PagesContext } from "../context/pagesContext";
 
-export const Header = () => {
+const Header = () => {
   const { isHideHome } = useContext(PagesContext);
   return (
     <>
@@ -20,10 +21,11 @@ export const Header = () => {
   );
 };
 
+export default memo(Header);
+
 const HeaderContainer = styled.header`
   position: relative;
   z-index: 10;
-
   ${({ isHideHome }) =>
     isHideHome
       ? `
@@ -32,6 +34,14 @@ const HeaderContainer = styled.header`
         height: 100px;
         width: 100%;
         background-color: rgb(240, 240, 240);
+
+        @media (max-width: 1090px) {
+          height: 70px;
+        }
+
+        @media (max-width: 800px) {
+          height: 90px;
+        }
       `
       : null}
 `;

@@ -1,10 +1,11 @@
+import { memo } from "react";
 import styled from "styled-components";
 import { aboutCompanyUkr } from "../contentSettings/configs";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
 import { DetailsWrap } from "../Components/cards/componentsForCards/reusedStyledComponents";
 import photoImg from "../assets/img/photo.webp";
 
-export const Mission = () => {
+const Mission = () => {
   const { fullDescription1, fullDescription2, name, position } =
     aboutCompanyUkr[0];
   let preText = fullDescription1.slice(0, 9);
@@ -22,7 +23,7 @@ export const Mission = () => {
           </PhotoWrapper>
           <DetailsWrap isMissionSect={true}>
             <MissionText>
-              <MissionPretext>" {preText}</MissionPretext>
+              <MissionPretext>"{preText}</MissionPretext>
               {text}
             </MissionText>
             <MissionText>{fullDescription2} "</MissionText>
@@ -37,15 +38,26 @@ export const Mission = () => {
   );
 };
 
+export default memo(Mission);
+
 const MissionBackground = styled.div`
   background-color: rgb(82, 155, 45, 0.9);
-  padding: 80px 0;
+  padding: 110px 0;
   margin: 80px 0 40px;
+
+  @media (max-width: 800px) {
+    padding: 60px 0 110px;
+  }
 `;
 
 const MissionFlexWrapper = styled.div`
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 1090px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const PhotoWrapper = styled.div`
@@ -69,6 +81,10 @@ const ImgWrapper = styled.div`
   line-height: 0;
   position: relative;
   z-index: 5;
+
+  @media (max-width: 1090px) {
+    margin-bottom: 70px;
+  }
 `;
 
 const Img = styled.img`
@@ -81,6 +97,10 @@ const MissionPretext = styled.span`
   font-size: 1.4em;
   color: rgb(0, 118, 53);
   font-weight: 700;
+
+  @media (max-width: 480px) {
+    font-size: 1.2em;
+  }
 `;
 
 const MissionText = styled.p`
@@ -88,6 +108,11 @@ const MissionText = styled.p`
   line-height: 1.3em;
   text-align: justify;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
 `;
 
 const NameDirector = styled.span`

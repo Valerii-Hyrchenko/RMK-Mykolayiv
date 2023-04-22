@@ -7,10 +7,10 @@ import {
   BackgroundBlock,
 } from "../cards/componentsForCards/reusedStyledComponents";
 import { contactsUkr } from "../../contentSettings/configs";
-import { useState } from "react";
+import { useState, memo } from "react";
 import styled from "styled-components";
 
-export const ContactsCards = () => {
+const ContactsCards = () => {
   const [phoneToggle, setPhoneToggle] = useState(false);
   const [mailToggle, setMailToggle] = useState(false);
   const [addressToggle, setAddressToggle] = useState(false);
@@ -55,6 +55,8 @@ export const ContactsCards = () => {
     </CardWrapper>
   ));
 };
+
+export default memo(ContactsCards);
 
 const InfoWrapper = styled.div`
   text-align: center;

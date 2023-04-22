@@ -1,7 +1,8 @@
+import { memo } from "react";
 import arrow from "../assets/icons/arrow_title.svg";
 import styled from "styled-components";
 
-export const SectionTitleWithArrows = ({ isNews, children }) => {
+const SectionTitleWithArrows = ({ isNews, children }) => {
   return (
     <TitleWrapper isNews={isNews}>
       <ArrowsTitleContainer>
@@ -19,10 +20,21 @@ export const SectionTitleWithArrows = ({ isNews, children }) => {
   );
 };
 
+export default memo(SectionTitleWithArrows);
+
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: ${({ isNews }) => (isNews ? "center" : "flex-start")};
   margin: 0 0 20px 90px;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    margin: 0 0 20px 30px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 0 20px 15px;
+  }
 `;
 
 const Title = styled.h2`
@@ -30,11 +42,23 @@ const Title = styled.h2`
   font-size: 22px;
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+  @media (max-width: 360px) {
+    font-size: 19px;
+    letter-spacing: 0;
+  }
 `;
 
 const ArrowsTitleContainer = styled.div`
   display: flex;
   margin-right: 5px;
+
+  @media (max-width: 360px) {
+    margin-right: 3px;
+  }
 `;
 
 const ArrowImgWrapper = styled.div`

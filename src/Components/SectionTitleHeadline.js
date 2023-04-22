@@ -1,12 +1,15 @@
+import { memo } from "react";
 import styled from "styled-components";
 
-export const SectionTitleHeadline = ({ children }) => {
+const SectionTitleHeadline = ({ children }) => {
   return (
     <TitleWrapper>
       <Title>{children}</Title>
     </TitleWrapper>
   );
 };
+
+export default memo(SectionTitleHeadline);
 
 const TitleWrapper = styled.div`
   padding-top: 85px;
@@ -18,7 +21,7 @@ const TitleWrapper = styled.div`
   &::before {
     content: "";
     height: 2px;
-    width: 100%;
+    width: 110%;
     background-color: rgb(0, 0, 0, 0.7);
   }
 

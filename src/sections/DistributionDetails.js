@@ -1,8 +1,9 @@
-import { DistributionCard } from "../Components/cards/DistributionCard";
-import { DistributionInfo } from "../Components/businessLineDetails/DistributionInfo";
+import DistributionCard from "../Components/cards/DistributionCard";
+import DistributionInfo from "../Components/businessLineDetails/DistributionInfo";
 import styled from "styled-components";
+import { memo } from "react";
 
-export const DistributionDetails = () => {
+const DistributionDetails = () => {
   return (
     <DistributionDetailsFlexWrap>
       <DistributionCard />
@@ -10,6 +11,8 @@ export const DistributionDetails = () => {
     </DistributionDetailsFlexWrap>
   );
 };
+
+export default memo(DistributionDetails);
 
 const DistributionDetailsFlexWrap = styled.div`
   display: flex;
@@ -40,7 +43,7 @@ const DistributionDetailsFlexWrap = styled.div`
   }
 
   @media (max-width: 1090px) {
-    margin-top: 0;
+    margin-top: 30px;
   }
 
   @media (max-width: 800px) {

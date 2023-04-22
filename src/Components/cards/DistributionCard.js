@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import { businessLineUkr } from "../../contentSettings/configs";
 import {
   ItemContainer,
@@ -10,7 +10,7 @@ import {
 } from "../cards/componentsForCards/reusedStyledComponents";
 import { PagesContext } from "../../context/pagesContext";
 
-export const DistributionCard = () => {
+const DistributionCard = () => {
   const { img, title } = businessLineUkr[2];
   const { chooseBusinessDetails } = useContext(PagesContext);
   return (
@@ -25,3 +25,5 @@ export const DistributionCard = () => {
     </CardWrapper>
   );
 };
+
+export default memo(DistributionCard);

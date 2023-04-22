@@ -1,21 +1,22 @@
-import { AssemblyCard } from "../Components/cards/AssemblyCard";
-import { ProjectsCard } from "../Components/cards/ProjectsCard";
-import { DistributionCard } from "../Components/cards/DistributionCard";
-import { SectionTitleWithArrows } from "../Components/SectionTitleWithArrows";
+import AssemblyCard from "../Components/cards/AssemblyCard";
+import ProjectsCard from "../Components/cards/ProjectsCard";
+import DistributionCard from "../Components/cards/DistributionCard";
+import SectionTitleWithArrows from "../Components/SectionTitleWithArrows";
 import { sectionsTitles } from "../contentSettings/configs";
 import styled from "styled-components";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
-import { AssemblyDetails } from "../sections/AssemblyDetails";
-import { ProjectsDetails } from "../sections/ProjectsDetails";
-import { DistributionDetails } from "../sections/DistributionDetails";
+import AssemblyDetails from "../sections/AssemblyDetails";
+import ProjectsDetails from "../sections/ProjectsDetails";
+import DistributionDetails from "../sections/DistributionDetails";
 import { businessLineUkr } from "../contentSettings/configs";
-import { Footer } from "../Components/Footer";
-import { useContext } from "react";
+import Footer from "../Components/Footer";
+import { useContext, memo } from "react";
 import { PagesContext } from "../context/pagesContext";
 import businessLineBg from "../assets/img/business_line_background.webp";
 
-export const BusinessLine = () => {
-  const { businessLineRef, currentDetails } = useContext(PagesContext);
+const BusinessLine = () => {
+  const { businessLineRef, currentDetails, chooseBusinessDetails } =
+    useContext(PagesContext);
 
   const renderChosenDetails = () => {
     switch (currentDetails.id) {
@@ -35,19 +36,24 @@ export const BusinessLine = () => {
         );
     }
   };
-
   return (
     <BackgroundWrap ref={businessLineRef}>
       <SectionWrapper>
-        <SectionTitleWithArrows>
-          {sectionsTitles.businessLine.text}
-        </SectionTitleWithArrows>
+        <WrapperForOnClickEvent
+          onClick={() => chooseBusinessDetails("noChosen")}
+        >
+          <SectionTitleWithArrows>
+            {sectionsTitles.businessLine.text}
+          </SectionTitleWithArrows>
+        </WrapperForOnClickEvent>
         {renderChosenDetails()}
       </SectionWrapper>
       <Footer />
     </BackgroundWrap>
   );
 };
+
+export default memo(BusinessLine);
 
 const BackgroundWrap = styled.div`
   scroll-margin-top: 100px;
@@ -58,6 +64,29 @@ const BackgroundWrap = styled.div`
   background-position: center;
   background-size: cover;
   height: 520px;
+
+  @media (max-width: 1200px) {
+    height: 495px;
+  }
+
+  @media (max-width: 1090px) {
+    padding-top: 165px;
+    height: 470px;
+    scroll-margin-top: 70px;
+  }
+
+  @media (max-width: 800px) {
+    height: 1085px;
+    padding-top: 135px;
+  }
+
+  @media (max-width: 550px) {
+    height: 1195px;
+  }
+
+  @media (max-width: 480px) {
+    height: 1185px;
+  }
 `;
 
 const CardsFlexWrapper = styled.div`
@@ -83,14 +112,16 @@ const CardsFlexWrapper = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
-  }
-
-  @media (max-width: 1090px) {
-  }
-
   @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
   }
+
+  @media (max-width: 550px) {
+    padding-top: 30px;
+  }
+`;
+
+const WrapperForOnClickEvent = styled.div`
+  cursor: pointer;
 `;

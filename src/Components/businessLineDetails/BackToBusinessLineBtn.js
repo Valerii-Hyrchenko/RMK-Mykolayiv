@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import arrowImg from "../../assets/icons/arrow_back.svg";
 import styled from "styled-components";
 import { PagesContext } from "../../context/pagesContext";
 
-export const BackToBusinessLineBtn = () => {
+const BackToBusinessLineBtn = () => {
   const { chooseBusinessDetails } = useContext(PagesContext);
   return (
     <BusinessLineDetailsBtnWrap
@@ -15,6 +15,8 @@ export const BackToBusinessLineBtn = () => {
     </BusinessLineDetailsBtnWrap>
   );
 };
+
+export default memo(BackToBusinessLineBtn);
 
 const BusinessLineDetailsBtnWrap = styled.div`
   margin: 5px 0 -10px -25px;

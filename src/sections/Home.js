@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import backgroundImg from "../assets/img/home_background.jpg";
+import backgroundImg1090 from "../assets/img/home_background_1090.jpg";
 import { PagesContext } from "../context/pagesContext";
-import { useContext } from "react";
+import { useContext, memo } from "react";
 
-export const Home = ({ homeRef }) => {
+const Home = ({ homeRef }) => {
   const { isHideHome } = useContext(PagesContext);
   return <HomeContent isHideHome={isHideHome} ref={homeRef}></HomeContent>;
 };
+
+export default memo(Home);
 
 const HomeContent = styled.div`
   height: ${({ isHideHome }) => (isHideHome ? "0vh" : "100vh")};
@@ -46,12 +49,7 @@ const HomeContent = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
-  }
-
   @media (max-width: 1090px) {
-  }
-
-  @media (max-width: 550px) {
+    background-image: url(${backgroundImg1090});
   }
 `;

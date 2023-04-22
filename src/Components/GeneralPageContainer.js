@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, memo } from "react";
 import styled from "styled-components";
 import { PagesContext } from "../context/pagesContext";
 
-export const GeneralPageContainer = ({ children }) => {
+const GeneralPageContainer = ({ children }) => {
   const { isHideHome, isPageReloaded } = useContext(PagesContext);
   const [isSectionAnimate, setIsSectionAnimate] = useState(false);
 
@@ -20,6 +20,8 @@ export const GeneralPageContainer = ({ children }) => {
     </Container>
   );
 };
+
+export default memo(GeneralPageContainer);
 
 const Container = styled.div`
   animation-duration: 1000ms;

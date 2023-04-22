@@ -1,28 +1,39 @@
+import { memo } from "react";
 import styled from "styled-components";
 import { useContext, useEffect, useRef, useState } from "react";
 import { PagesContext } from "../../context/pagesContext";
 import logo from "../../assets/icons/logo.svg";
 
-export const Logo = () => {
-  const { isHideHome, isPageReloaded } = useContext(PagesContext);
+const Logo = () => {
+  const { isHideHome, isPageReloaded, isCheckboxChecked } =
+    useContext(PagesContext);
   const [isAbbrevAnim, setIsAbbrevAnim] = useState(false);
   const [isMissionAnim, setIsMissionAnim] = useState(false);
   const [isBgAnim, setIsBgAnim] = useState(false);
+  const [adaptiveAnim, setAdaptiveAnim] = useState(400);
   const logoTitle = useRef(null);
 
   const logoAnimTimeouts = () => {
-    setTimeout(() => setIsAbbrevAnim(true), 3600);
+    setTimeout(() => setIsAbbrevAnim(true), 2000);
     let titleLetters = [...logoTitle.current.children];
     titleLetters.forEach((item, index) => {
-      let delay = 4400 + 300 * (index + 1);
+      let delay = 2400 + 300 * (index + 1);
       setTimeout(() => (item.style.display = "block"), delay);
     });
-    setTimeout(() => setIsMissionAnim(true), 7700);
+    setTimeout(() => setIsMissionAnim(true), 5000);
     if (isHideHome) setTimeout(() => setIsBgAnim(true), 8500);
+  };
+
+  const getCurrentLogoAnim = () => {
+    if (window.screen.width < 1091) setAdaptiveAnim(280);
+    if (window.screen.width < 801) setAdaptiveAnim(200);
+    if (window.screen.width < 481) setAdaptiveAnim(150);
+    if (window.screen.width < 381) setAdaptiveAnim(100);
   };
 
   useEffect(() => {
     logoAnimTimeouts();
+    getCurrentLogoAnim();
   }, []);
 
   useEffect(() => {
@@ -34,6 +45,8 @@ export const Logo = () => {
       isBgAnim={isBgAnim}
       isHideHome={isHideHome}
       isPageReloaded={isPageReloaded}
+      adaptiveAnim={adaptiveAnim}
+      isCheckboxChecked={isCheckboxChecked}
     >
       <LogoImgWrapper>
         <LogoImg src={logo} alt="logo" />
@@ -56,16 +69,33 @@ export const Logo = () => {
   );
 };
 
+export default memo(Logo);
+
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  z-index: 12;
+  z-index: ${({ isCheckboxChecked }) => (isCheckboxChecked ? 0 : 10)};
   position: absolute;
   transform: translate(-50%, -50%);
   top: 45%;
   left: 55%;
   width: 335px;
   padding: 10px;
+  opacity: ${({ isCheckboxChecked, isHideHome }) =>
+    isCheckboxChecked && isHideHome ? 0 : 1};
+
+  @media (max-width: 1200px) {
+    width: 298px;
+  }
+
+  @media (max-width: 800px) {
+    width: 242px;
+    padding: 5px;
+  }
+
+  @media (max-width: 550px) {
+    left: 50%;
+  }
 
   ${({ isHideHome }) =>
     isHideHome
@@ -73,7 +103,7 @@ const LogoWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 40%;
-    transform: translateX(-100%) scale(0.75, 0.75);
+    transform: translate(-100%, -7%) scale(0.75, 0.75);
     `
       : null}
 
@@ -84,20 +114,63 @@ const LogoWrapper = styled.div`
       border-radius: 45px;
       background-color: rgb(240, 240, 240);
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-      animation-name: showLogoScrollFirsTime;
-      animation-duration: 2500ms;
+      animation-name: scrollLogoFirsTime;
+      animation-duration: 2300ms;
       transition-timing-function: linier;
+
+      @media (max-width: 1300px) {
+        animation-name: showLogoReloadPage;
+      }
+
+      @media (max-width: 800px) {
+        border: none;
+        box-shadow: none;
+        left: 55%;
+      }
+
+      @media (max-width: 480px) {
+        left: 65%;
+      }
+
+      @media (max-width: 360px) {
+        left: 70%;
+      }
       `
       : null}
 
-    ${({ isPageReloaded }) =>
+  ${({ isPageReloaded }) =>
     isPageReloaded
       ? `
         animation-name: showLogoReloadPage;
+        border: none;
       `
       : null}
 
-  @keyframes showLogoScrollFirsTime {
+  ${({ adaptiveAnim }) =>
+    adaptiveAnim &&
+    `
+    ${TitlePart} {
+
+      @keyframes showLetter {
+        0% {
+          transform: translateX(${adaptiveAnim}px) rotateY(1080deg);
+          opacity: 0;
+        }
+
+        80% {
+          margin-left: -40px;
+        }
+
+        100% {
+          margin-left: 0;
+          transform: translateX(0) rotateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  `}
+
+  @keyframes scrollLogoFirsTime {
     0% {
       top: 45%;
       left: 55%;
@@ -115,7 +188,7 @@ const LogoWrapper = styled.div`
     100% {
       top: 0;
       left: 40%;
-      transform: translateX(-100%) scale(0.75, 0.75);
+      transform: translate(-100%, -7%) scale(0.75, 0.75);
       background-color: rgb(240, 240, 240);
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -133,26 +206,14 @@ const LogoWrapper = styled.div`
 
     100% {
       opacity: 1;
-      transform: translateX(-100%) scale(0.75, 0.75);
+      transform: translate(-100%, -7%) scale(0.75, 0.75);
     }
-  }
-
-  @media (max-width: 1200px) {
-  }
-
-  @media (max-width: 1090px) {
-  }
-
-  @media (max-width: 800px) {
-  }
-
-  @media (max-width: 550px) {
   }
 `;
 
 const LogoImgWrapper = styled.div`
   animation-name: showImg;
-  animation-duration: 4000ms;
+  animation-duration: 2300ms;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 
   @keyframes showImg {
@@ -175,6 +236,14 @@ const LogoImgWrapper = styled.div`
       opacity: 1;
     }
   }
+
+  @media (max-width: 1200px) {
+    width: 135px;
+  }
+
+  @media (max-width: 800px) {
+    width: 110px;
+  }
 `;
 
 const LogoImg = styled.img`
@@ -188,7 +257,7 @@ const Abbreviation = styled.p`
   font-size: 42px;
   display: ${({ isAbbrevAnim }) => (isAbbrevAnim ? "block" : "none")};
   animation-name: showAbbreviation;
-  animation-duration: 1500ms;
+  animation-duration: 1000ms;
   transition-timing-function: linear;
 
   @keyframes showAbbreviation {
@@ -204,6 +273,18 @@ const Abbreviation = styled.p`
       opacity: 1;
     }
   }
+
+  @media (max-width: 1200px) {
+    top: 48px;
+    font-size: 38px;
+    left: 28px;
+  }
+
+  @media (max-width: 800px) {
+    top: 35px;
+    left: 19px;
+    font-size: 32px;
+  }
 `;
 
 const LogoTitle = styled.div`
@@ -218,24 +299,15 @@ const TitlePart = styled.span`
   font-size: 32px;
   margin-right: 1px;
   animation-name: showLetter;
-  animation-duration: 1350ms;
+  animation-duration: 1050ms;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 
-  @keyframes showLetter {
-    0% {
-      transform: translateX(500px) rotateY(1080deg);
-      opacity: 0;
-    }
+  @media (max-width: 1200px) {
+    font-size: 28px;
+  }
 
-    80% {
-      margin-left: -40px;
-    }
-
-    100% {
-      margin-left: 0;
-      transform: translateX(0) rotateY(0);
-      opacity: 1;
-    }
+  @media (max-width: 800px) {
+    font-size: 22px;
   }
 `;
 
@@ -261,5 +333,14 @@ const LogoMission = styled.p`
       transform: rotateX(0) translateY(0);
       opacity: 1;
     }
+  }
+
+  @media (max-width: 1200px) {
+    bottom: 30px;
+    font-size: 10px;
+  }
+
+  @media (max-width: 800px) {
+    display: none;
   }
 `;

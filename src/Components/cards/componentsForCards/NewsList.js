@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { newsUkr } from "../../../contentSettings/configs";
+import { memo } from "react";
 
-export const NewsList = () => {
+const NewsList = () => {
   return (
     <NewsGridWrapper>
       {newsUkr.map(({ id, title }) => (
@@ -12,6 +13,8 @@ export const NewsList = () => {
     </NewsGridWrapper>
   );
 };
+
+export default memo(NewsList);
 
 const NewsGridWrapper = styled.div`
   display: grid;
