@@ -172,7 +172,7 @@ export const newsUkr = [
 export const missionUkr = {
   id: id++,
   text: "ефективні, безпечні та якісні рішення",
-  footerName: "© 2022 РМК-МИКОЛАЇВ",
+  footerName: "© 2023 РМК-МИКОЛАЇВ",
 };
 
 export const sectionsTitles = {

@@ -10,30 +10,21 @@ const Logo = () => {
   const [isAbbrevAnim, setIsAbbrevAnim] = useState(false);
   const [isMissionAnim, setIsMissionAnim] = useState(false);
   const [isBgAnim, setIsBgAnim] = useState(false);
-  const [adaptiveAnim, setAdaptiveAnim] = useState(400);
   const logoTitle = useRef(null);
 
   const logoAnimTimeouts = () => {
     setTimeout(() => setIsAbbrevAnim(true), 2000);
     let titleLetters = [...logoTitle.current.children];
     titleLetters.forEach((item, index) => {
-      let delay = 2400 + 300 * (index + 1);
+      let delay = 2400 + 100 * (index + 1);
       setTimeout(() => (item.style.display = "block"), delay);
     });
-    setTimeout(() => setIsMissionAnim(true), 5000);
+    setTimeout(() => setIsMissionAnim(true), 3200);
     if (isHideHome) setTimeout(() => setIsBgAnim(true), 8500);
-  };
-
-  const getCurrentLogoAnim = () => {
-    if (window.screen.width < 1091) setAdaptiveAnim(280);
-    if (window.screen.width < 801) setAdaptiveAnim(200);
-    if (window.screen.width < 481) setAdaptiveAnim(150);
-    if (window.screen.width < 381) setAdaptiveAnim(100);
   };
 
   useEffect(() => {
     logoAnimTimeouts();
-    getCurrentLogoAnim();
   }, []);
 
   useEffect(() => {
@@ -45,7 +36,6 @@ const Logo = () => {
       isBgAnim={isBgAnim}
       isHideHome={isHideHome}
       isPageReloaded={isPageReloaded}
-      adaptiveAnim={adaptiveAnim}
       isCheckboxChecked={isCheckboxChecked}
     >
       <LogoImgWrapper>
@@ -145,30 +135,6 @@ const LogoWrapper = styled.div`
         border: none;
       `
       : null}
-
-  ${({ adaptiveAnim }) =>
-    adaptiveAnim &&
-    `
-    ${TitlePart} {
-
-      @keyframes showLetter {
-        0% {
-          transform: translateX(${adaptiveAnim}px) rotateY(1080deg);
-          opacity: 0;
-        }
-
-        80% {
-          margin-left: -40px;
-        }
-
-        100% {
-          margin-left: 0;
-          transform: translateX(0) rotateY(0);
-          opacity: 1;
-        }
-      }
-    }
-  `}
 
   @keyframes scrollLogoFirsTime {
     0% {
@@ -301,6 +267,18 @@ const TitlePart = styled.span`
   animation-name: showLetter;
   animation-duration: 1050ms;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+
+  @keyframes showLetter {
+    0% {
+      transform: translateX(70px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0) rotateY(0);
+      opacity: 1;
+    }
+  }
 
   @media (max-width: 1200px) {
     font-size: 28px;

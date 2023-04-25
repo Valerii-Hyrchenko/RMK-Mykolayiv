@@ -26,7 +26,7 @@ const Mission = () => {
               <MissionPretext>"{preText}</MissionPretext>
               {text}
             </MissionText>
-            <MissionText>{fullDescription2} "</MissionText>
+            <MissionText>{fullDescription2}"</MissionText>
             <MissionText>
               <NameDirector>{name}</NameDirector>
               {position}
@@ -73,6 +73,10 @@ const BorderBlockBg = styled.div`
   bottom: 20px;
   left: -30px;
   border-radius: 25px;
+
+  @media (max-width: 380px) {
+    left: -12px;
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -105,9 +109,13 @@ const MissionPretext = styled.span`
 
 const MissionText = styled.p`
   font-size: 1.2em;
-  line-height: 1.3em;
+  line-height: 1.4em;
   text-align: justify;
   margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-top: 25px;
+  }
 
   @media (max-width: 480px) {
     font-size: 1.1em;
