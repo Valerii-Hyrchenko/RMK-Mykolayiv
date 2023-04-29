@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.js": "/RMK-Mykolayiv/static/js/main.f728f12d.js",
+    "main.js": "/RMK-Mykolayiv/static/js/main.2fbffd73.js",
     "static/media/home_background.jpg": "/RMK-Mykolayiv/static/media/home_background.7d85ae1e92741698a66f.jpg",
     "static/media/home_background_1090.jpg": "/RMK-Mykolayiv/static/media/home_background_1090.6252b6371787d4706118.jpg",
-    "static/media/photo.webp": "/RMK-Mykolayiv/static/media/photo.cac92f4aefdb889a79cb.webp",
     "static/media/business_line_background.webp": "/RMK-Mykolayiv/static/media/business_line_background.d2a0c92c220af45a283e.webp",
     "static/media/first_project_stage.webp": "/RMK-Mykolayiv/static/media/first_project_stage.fd06f4874eaef52e06ac.webp",
     "static/media/mission.webp": "/RMK-Mykolayiv/static/media/mission.7d616787c26cf71774ad.webp",
@@ -18,6 +17,7 @@
     "static/media/distribution_img_3.webp": "/RMK-Mykolayiv/static/media/distribution_img_3.485105f8af49165bdc4c.webp",
     "static/media/assembly.webp": "/RMK-Mykolayiv/static/media/assembly.44f75f69c0caa2ab3bd3.webp",
     "static/media/arrow_title.svg": "/RMK-Mykolayiv/static/media/arrow_title.83dc82b3b9b9aeb5aea32e576a571f3a.svg",
+    "static/media/photo.svg": "/RMK-Mykolayiv/static/media/photo.5e1a9ba342748a42b70791ab20675fb8.svg",
     "static/media/phone.svg": "/RMK-Mykolayiv/static/media/phone.e6eb2f29c3cbe0eecc23191d0e4801db.svg",
     "static/media/location.svg": "/RMK-Mykolayiv/static/media/location.e6cb8079f7fbafadd673a5a4e24f1aa9.svg",
     "static/media/logo.svg": "/RMK-Mykolayiv/static/media/logo.848eca62799c1066753e8ac278c9d363.svg",
@@ -27,9 +27,9 @@
     "static/media/scroll_to_top_arrow.svg": "/RMK-Mykolayiv/static/media/scroll_to_top_arrow.92519fdfa44201a2a558a97c94c5efed.svg",
     "static/media/email.svg": "/RMK-Mykolayiv/static/media/email.bc557e5aef7932daf51ae0a634ec88d4.svg",
     "static/media/list_marker.svg": "/RMK-Mykolayiv/static/media/list_marker.f72d9e67e3d7a1ab13dc6906afbf8d43.svg",
-    "main.f728f12d.js.map": "/RMK-Mykolayiv/static/js/main.f728f12d.js.map"
+    "main.2fbffd73.js.map": "/RMK-Mykolayiv/static/js/main.2fbffd73.js.map"
   },
   "entrypoints": [
-    "static/js/main.f728f12d.js"
+    "static/js/main.2fbffd73.js"
   ]
 }
