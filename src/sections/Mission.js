@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { aboutCompanyUkr } from "../contentSettings/configs";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
 import { DetailsWrap } from "../Components/cards/componentsForCards/reusedStyledComponents";
-import photoImg from "../assets/img/photo.webp";
+import photoImg from "../assets/img/manager.webp";
 
 const Mission = () => {
   const { fullDescription1, fullDescription2, name, position } =
@@ -80,14 +80,26 @@ const BorderBlockBg = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-  width: 290px;
   border-radius: 35px;
   line-height: 0;
   position: relative;
   z-index: 5;
 
+  @media (max-width: 1200px) {
+    max-width: 300px;
+  }
+
   @media (max-width: 1090px) {
     margin-bottom: 70px;
+    max-width: 350px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 280px;
+  }
+
+  @media (max-width: 360px) {
+    max-width: 260px;
   }
 `;
 
@@ -95,6 +107,15 @@ const Img = styled.img`
   width: 100%;
   border-radius: 35px;
   border: 4px solid rgb(0, 118, 53);
+  padding: 30px;
+
+  @media (max-width: 550px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 const MissionPretext = styled.span`

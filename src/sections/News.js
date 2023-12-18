@@ -1,4 +1,4 @@
-import NewsList from "../Components/cards/componentsForCards/NewsList";
+import NewsList from "../Components/NewsList";
 import Footer from "../Components/Footer";
 import { sectionsTitles } from "../contentSettings/configs";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
@@ -8,13 +8,15 @@ import SectionTitleWithArrows from "../Components/SectionTitleWithArrows";
 import styled from "styled-components";
 
 const News = () => {
-  const { newsRef } = useContext(PagesContext);
+  const { newsRef, setSelectedArticle } = useContext(PagesContext);
   return (
     <NewsWrapper ref={newsRef}>
       <SectionWrapper>
-        <SectionTitleWithArrows isNews={true}>
-          {sectionsTitles.news.text}
-        </SectionTitleWithArrows>
+        <WrapperForOnClickEvent onClick={() => setSelectedArticle(null)}>
+          <SectionTitleWithArrows isNews={true}>
+            {sectionsTitles.news.text}
+          </SectionTitleWithArrows>
+        </WrapperForOnClickEvent>
         <NewsList />
       </SectionWrapper>
       <Footer isNews={true} />
@@ -36,4 +38,8 @@ const NewsWrapper = styled.div`
   @media (max-width: 550px) {
     padding: 90px 0;
   }
+`;
+
+const WrapperForOnClickEvent = styled.div`
+  cursor: pointer;
 `;

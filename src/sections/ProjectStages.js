@@ -2,15 +2,17 @@ import { memo } from "react";
 import styled from "styled-components";
 import { SectionWrapper } from "../Components/cards/componentsForCards/reusedStyledComponents";
 import SectionTitleWithArrows from "../Components/SectionTitleWithArrows";
-import { projectStages } from "../contentSettings/configs";
+import { projectStagesUkr } from "../contentSettings/configs";
 
 const ProjectStages = () => {
   return (
     <ProjectStagesWrapper>
       <SectionWrapper>
-        <SectionTitleWithArrows>{projectStages.title}</SectionTitleWithArrows>
+        <SectionTitleWithArrows>
+          {projectStagesUkr.title}
+        </SectionTitleWithArrows>
         <ProjectsFlexWrapper>
-          {projectStages.description.map(
+          {projectStagesUkr.description.map(
             ({ id, itemTitle, img, itemText }, index) => (
               <ItemFlexContainer key={id}>
                 <StageContainer>
@@ -20,10 +22,10 @@ const ProjectStages = () => {
                   </ItemImgWrapper>
                   <ItemText>{itemText}</ItemText>
                 </StageContainer>
-                {index !== projectStages.description.length - 1 ? (
+                {index !== projectStagesUkr.description.length - 1 ? (
                   <ArrowImgWrapper>
                     <ItemImg
-                      src={projectStages.arrowImg}
+                      src={projectStagesUkr.arrowImg}
                       alt="project_next_stage_arrow"
                     />
                   </ArrowImgWrapper>

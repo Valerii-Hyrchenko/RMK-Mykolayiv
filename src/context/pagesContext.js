@@ -4,6 +4,7 @@ export const PagesContext = createContext();
 
 const Context = (props) => {
   const [currentDetails, setCurrentDetails] = useState({ id: "noChosen" });
+  const [selectedArticle, setSelectedArticle] = useState(null);
   const [isHideHome, setIsHideHome] = useState(false);
   const [isPageReloaded, setIsPageReloaded] = useState(false);
   const [isClickOnNavMenu, setIsClickOnNavMenu] = useState(false);
@@ -32,6 +33,8 @@ const Context = (props) => {
     setIsCheckboxChecked,
     isMenuHide,
     setIsMenuHide,
+    selectedArticle,
+    setSelectedArticle,
     headerRef,
     homeRef,
     businessLineRef,

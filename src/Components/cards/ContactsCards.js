@@ -62,11 +62,14 @@ const InfoWrapper = styled.div`
   text-align: center;
 `;
 
+const ImgArrow = styled.img``;
+
 const Info = styled.p`
   width: 170px;
   margin: 0 auto;
   color: rgb(0, 118, 53);
   font-size: 1.1em;
+  word-wrap: break-word;
   line-height: 1.2em;
   padding-top: 60px;
   position: relative;

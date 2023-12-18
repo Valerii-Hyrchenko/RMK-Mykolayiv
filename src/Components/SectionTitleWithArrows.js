@@ -24,9 +24,19 @@ export default memo(SectionTitleWithArrows);
 
 const TitleWrapper = styled.div`
   display: flex;
-  justify-content: ${({ isNews }) => (isNews ? "center" : "flex-start")};
   margin: 0 0 20px 90px;
   align-items: center;
+
+  ${({ isNews }) =>
+    isNews
+      ? `
+        justify-content: center;
+
+        @media (max-width: 1090px) {
+          justify-content: flex-start;
+        }
+      `
+      : ""}
 
   @media (max-width: 800px) {
     margin: 0 0 20px 30px;
