@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.js": "/RMK-Mykolayiv/static/js/main.b198bb50.js",
+    "main.js": "/RMK-Mykolayiv/static/js/main.e9c8d02c.js",
     "static/media/home_background.jpg": "/RMK-Mykolayiv/static/media/home_background.7d85ae1e92741698a66f.jpg",
     "static/media/home_background_1090.jpg": "/RMK-Mykolayiv/static/media/home_background_1090.6252b6371787d4706118.jpg",
+    "static/media/factory.webp": "/RMK-Mykolayiv/static/media/factory.35dd8c469f16bdf03306.webp",
     "static/media/business_line_background.webp": "/RMK-Mykolayiv/static/media/business_line_background.d2a0c92c220af45a283e.webp",
     "static/media/first_project_stage.webp": "/RMK-Mykolayiv/static/media/first_project_stage.fd06f4874eaef52e06ac.webp",
     "static/media/mission.webp": "/RMK-Mykolayiv/static/media/mission.7d616787c26cf71774ad.webp",
     "static/media/target.webp": "/RMK-Mykolayiv/static/media/target.88e37f237fae917df790.webp",
     "static/media/assembling_project_stage.webp": "/RMK-Mykolayiv/static/media/assembling_project_stage.c1938d9241d4bd7433d1.webp",
+    "static/media/manager.webp": "/RMK-Mykolayiv/static/media/manager.f371c857f9040386b9c8.webp",
     "static/media/distribution_img_1.webp": "/RMK-Mykolayiv/static/media/distribution_img_1.e6b17d96dabb01e0f3bb.webp",
     "static/media/final_project_stage.webp": "/RMK-Mykolayiv/static/media/final_project_stage.8ab51f8035410beefc36.webp",
+    "static/media/generator.webp": "/RMK-Mykolayiv/static/media/generator.80d06cda1e7c156a9185.webp",
     "static/media/distribution_img_2.webp": "/RMK-Mykolayiv/static/media/distribution_img_2.b5d41998298ffd7206b3.webp",
     "static/media/project.webp": "/RMK-Mykolayiv/static/media/project.3f50462dffc3d6f6dc17.webp",
     "static/media/supply_project_stage.webp": "/RMK-Mykolayiv/static/media/supply_project_stage.e70e293edbce9cb9b30d.webp",
@@ -17,7 +20,6 @@
     "static/media/distribution_img_3.webp": "/RMK-Mykolayiv/static/media/distribution_img_3.485105f8af49165bdc4c.webp",
     "static/media/assembly.webp": "/RMK-Mykolayiv/static/media/assembly.44f75f69c0caa2ab3bd3.webp",
     "static/media/arrow_title.svg": "/RMK-Mykolayiv/static/media/arrow_title.83dc82b3b9b9aeb5aea32e576a571f3a.svg",
-    "static/media/photo.svg": "/RMK-Mykolayiv/static/media/photo.5e1a9ba342748a42b70791ab20675fb8.svg",
     "static/media/phone.svg": "/RMK-Mykolayiv/static/media/phone.e6eb2f29c3cbe0eecc23191d0e4801db.svg",
     "static/media/location.svg": "/RMK-Mykolayiv/static/media/location.e6cb8079f7fbafadd673a5a4e24f1aa9.svg",
     "static/media/logo.svg": "/RMK-Mykolayiv/static/media/logo.848eca62799c1066753e8ac278c9d363.svg",
@@ -27,9 +29,9 @@
     "static/media/scroll_to_top_arrow.svg": "/RMK-Mykolayiv/static/media/scroll_to_top_arrow.92519fdfa44201a2a558a97c94c5efed.svg",
     "static/media/email.svg": "/RMK-Mykolayiv/static/media/email.bc557e5aef7932daf51ae0a634ec88d4.svg",
     "static/media/list_marker.svg": "/RMK-Mykolayiv/static/media/list_marker.f72d9e67e3d7a1ab13dc6906afbf8d43.svg",
-    "main.b198bb50.js.map": "/RMK-Mykolayiv/static/js/main.b198bb50.js.map"
+    "main.e9c8d02c.js.map": "/RMK-Mykolayiv/static/js/main.e9c8d02c.js.map"
   },
   "entrypoints": [
-    "static/js/main.b198bb50.js"
+    "static/js/main.e9c8d02c.js"
   ]
 }
